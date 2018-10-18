@@ -19,19 +19,19 @@ export class HomeScreen extends React.Component {
               text='Donor / Volunteer'
               backgroundColor='#ff2400'
               textColor='white'
-              onPress={() => console.log('Button Pressed')}
+              onPress={() => navigate('SignUp')}
             />
             <LongButton
               text='Food Organization'
               backgroundColor='#ff5d37'
               textColor='white'
-              onPress={() => console.log('Button Pressed')}
+              onPress={() => navigate('SignUp')}
             />
             <LongButton
               text='Restaurant / Company / Business'
               backgroundColor='#ffa58b'
               textColor='white'
-              onPress={() => console.log('Button Pressed')}
+              onPress={() => navigate('SignUp')}
             />
           </View>
           <View>

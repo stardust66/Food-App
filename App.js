@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { HomeScreen } from './src/screens/Home';
 import { LogInScreen } from './src/screens/LogIn';
+import { SignUpScreen } from './src/screens/SignUp';
 
 const RootStack = createStackNavigator({
   Home: {
@@ -9,6 +10,9 @@ const RootStack = createStackNavigator({
   },
   LogIn: {
     screen: LogInScreen
+  },
+  SignUp: {
+    screen: SignUpScreen
   }
 });
 
