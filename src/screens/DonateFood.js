@@ -33,9 +33,9 @@ export class DashboardScreen extends React.Component {
           placeholder="mm/dd/yy"
         />
         <Button
-            style={styles.button}
-            title="+ Add Item"
-          />
+          style={styles.button}
+          title="+ Add Item"
+        />
       </View>
      );
    }
