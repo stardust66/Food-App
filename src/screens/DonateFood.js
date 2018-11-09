@@ -1,12 +1,28 @@
 import React from 'react';
 import {
   StyleSheet, SafeAreaView, View, Text, Button, Dimensions, TextInput,
-  Picker
+  TouchableOpacity
 } from 'react-native';
 import { LongButton } from '../components/LongButton';
 import { Title } from '../components/Title';
+import QuickPicker from 'quick-picker';
 
 export class DonateFoodScreen extends React.Component {
+
+  state = {
+    foodType: 'Packaged',
+    foodDescription: '',
+    estimatedWeight: '',
+    estimatedExpirationDate: ''
+  }
+
+  showFoodTypePicker = () => {
+    QuickPicker.open({
+      items: ['Packaged', 'Prepared'],
+      selectedValue: this.state.foodType,
+      onValueChange: (value) => this.setState({foodType: value})
+    });
+  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -17,6 +33,12 @@ export class DonateFoodScreen extends React.Component {
           <View style={{width: 700, height: 7, backgroundColor: 'powderblue'}} />
         </View>
         <Text style={styles.body}>Food Type</Text>
+        <TouchableOpacity
+          onPress={this.showFoodTypePicker}
+        >
+          <Text style={styles.input}>{this.state.foodType}</Text>
+        </TouchableOpacity>
+        <QuickPicker />
         <Text style={styles.body}>Food Description</Text>
         <TextInput
           style={styles.input}
