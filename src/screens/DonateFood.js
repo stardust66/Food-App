@@ -6,7 +6,7 @@ import {
 import { LongButton } from '../components/LongButton';
 import { Title } from '../components/Title';
 
-export class DashboardScreen extends React.Component {
+export class DonateFoodScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;

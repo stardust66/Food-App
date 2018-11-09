@@ -4,10 +4,11 @@ import { HomeScreen } from './src/screens/Home';
 import { LogInScreen } from './src/screens/LogIn';
 import { SignUpScreen } from './src/screens/SignUp';
 import { DashboardScreen } from './src/screens/DonateFood';
+import { DonateFoodScreen } from './src/screens/DonateFood';
 
 const RootStack = createStackNavigator({
   DonateFood: {
-    screen: DonateFood
+    screen: DonateFoodScreen
   },
   Home: {
     screen: HomeScreen
