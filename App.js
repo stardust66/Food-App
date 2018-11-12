@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
 import { WelcomeScreen } from './src/screens/Welcome';
 import { LogInScreen } from './src/screens/LogIn';
 import { SignUpScreen } from './src/screens/SignUp';
@@ -8,7 +8,7 @@ import { FoodPickupScreen } from './src/screens/FoodPickup';
 import { PickupSelectionScreen } from './src/screens/PickupSelection';
 import { PickupSelectionforOrgScreen } from './src/screens/PickupSelectionforOrg';
 
-const RootStack = createStackNavigator({
+const RootStack = createDrawerNavigator({
   PickupSeclectionforOrg: {
     screen: PickupSelectionforOrgScreen
   },

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Dimensions, View, StyleSheet, Text, AppRegistry, Image, Picker, Button } from 'react-native';
+import {
+  Dimensions, View, StyleSheet, Text, AppRegistry, Image, Picker,
+  Button, SafeAreaView
+} from 'react-native';
 import { LongButton } from '../components/LongButton';
 import { Title } from '../components/Title';
 import QuickPicker from 'quick-picker';
@@ -8,7 +11,7 @@ export class PickupSelectionforOrgScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
+      <SafeAreaView style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
         <Image
           style={{width: 400, height: 250}}
           source={{uri: 'https://i0.wp.com/www.episcopalcafe.com/wp-content/uploads/2017/07/St_Pauls_School_-_areial_view_1416901926.jpg?w=431&ssl=1'}}
@@ -29,7 +32,7 @@ export class PickupSelectionforOrgScreen extends React.Component {
             textColor="white"
             backgroundColor='#ff4d4d'
           />
-      </View>
+      </SafeAreaView>
     );
   }
 

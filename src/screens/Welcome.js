@@ -10,7 +10,7 @@ export class WelcomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
+      <SafeAreaView style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
         <View style={styles.container}>
           <Title style={styles.title}>Welcome!</Title>
           <View>
@@ -42,7 +42,7 @@ export class WelcomeScreen extends React.Component {
             />
           </View>
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 

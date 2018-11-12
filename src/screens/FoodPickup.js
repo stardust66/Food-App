@@ -12,7 +12,7 @@ export class FoodPickupScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
+      <SafeAreaView style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
         <Text style={styles.header}>Pick Up Food</Text>
         <LongButton
             text="20 lbs delivery from St. Paul's School to Concord Cold Weather Center               3 mi | 0.5 mi from you"
@@ -39,7 +39,7 @@ export class FoodPickupScreen extends React.Component {
               textColor="white"
               backgroundColor='#ffb3b3'
           />
-      </View>
+      </SafeAreaView>
      );
    }
 }

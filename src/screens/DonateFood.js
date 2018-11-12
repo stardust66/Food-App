@@ -56,6 +56,7 @@ export class DonateFoodScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
+      <SafeAreaView style={{flex: 1}}>
       <TouchableWithoutFeedback style={{flex: 1}} onPress={Keyboard.dismiss} accessible={false}>
         <ScrollView style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
           <Text style={styles.header}>Items</Text>
@@ -95,6 +96,7 @@ export class DonateFoodScreen extends React.Component {
           />
         </ScrollView>
       </TouchableWithoutFeedback>
+      </SafeAreaView>
      );
    }
 }

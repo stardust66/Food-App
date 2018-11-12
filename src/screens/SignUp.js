@@ -17,7 +17,7 @@ export class SignUpScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
+      <SafeAreaView style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
         <View style={styles.container}>
           <Title style={styles.title}>Sign Up</Title>
           <View>
@@ -43,7 +43,7 @@ export class SignUpScreen extends React.Component {
             onPress={() => console.log(this.state)}
           />
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 
