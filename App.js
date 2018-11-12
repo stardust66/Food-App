@@ -7,6 +7,7 @@ import { DonateFoodScreen } from './src/screens/DonateFood';
 import { FoodPickupScreen } from './src/screens/FoodPickup';
 import { PickupSelectionScreen } from './src/screens/PickupSelection';
 import { PickupSelectionforOrgScreen } from './src/screens/PickupSelectionforOrg';
+import { DashboardScreen } from './src/screens/Dashboard';
 
 const RootStack = createDrawerNavigator({
   PickupSeclectionforOrg: {
@@ -29,6 +30,9 @@ const RootStack = createDrawerNavigator({
   },
   SignUp: {
     screen: SignUpScreen
+  },
+  Dashboard: {
+    screen: DashboardScreen
   }
 }, {
   initialRouteName: 'Welcome'
