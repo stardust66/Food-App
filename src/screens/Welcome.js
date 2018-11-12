@@ -5,7 +5,7 @@ import {
 import { LongButton } from '../components/LongButton';
 import { Title } from '../components/Title';
 
-export class HomeScreen extends React.Component {
+export class WelcomeScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;

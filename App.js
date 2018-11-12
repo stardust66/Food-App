@@ -1,17 +1,16 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
-import { HomeScreen } from './src/screens/Home';
+import { WelcomeScreen } from './src/screens/Welcome';
 import { LogInScreen } from './src/screens/LogIn';
 import { SignUpScreen } from './src/screens/SignUp';
-import { DashboardScreen } from './src/screens/DonateFood';
 import { DonateFoodScreen } from './src/screens/DonateFood';
 
 const RootStack = createStackNavigator({
   DonateFood: {
     screen: DonateFoodScreen
   },
-  Home: {
-    screen: HomeScreen
+  Welcome: {
+    screen: WelcomeScreen
   },
   LogIn: {
     screen: LogInScreen
@@ -19,6 +18,8 @@ const RootStack = createStackNavigator({
   SignUp: {
     screen: SignUpScreen
   }
+}, {
+  initialRouteName: 'Welcome'
 });
 
 export default class App extends React.Component {
