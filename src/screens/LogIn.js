@@ -4,25 +4,39 @@ import {
 } from 'react-native';
 import { Title } from '../components/Title';
 import { LongButton } from '../components/LongButton';
-import { TextBox } from '../components/TextBox.js';
+import { TextBox } from '../components/TextBox';
+import firebase from '../services/firebase';
 
 export class LogInScreen extends React.Component {
 
   state = {
-    username: '',
-    password: ''
+    email: '',
+    password: '',
+    errorMessage: ''
   };
+
+  submit = () => {
+    const { email, password } = this.state;
+    firebase.auth().signInWithEmailAndPassword(email, password).then(({user}) => {
+      this.props.navigation.navigate('Dashboard');
+    }).catch((error) => {
+      this.setState({errorMessage: error.message});
+    })
+  }
 
   render() {
     const { navigate } = this.props.navigation;
     return (
       <SafeAreaView style={{ height: Dimensions.get('window').height, backgroundColor: 'white' }}>
         <View style={styles.container}>
+          {this.state.errorMessage &&
+            <Text style={styles.errorMessage}>{this.state.errorMessage}</Text>
+          }
           <Title style={styles.title}>Log In</Title>
           <View>
             <TextBox
-              onEndEditing={(text) => this.setState({username: text})}
-              placeholder='Username'
+              onEndEditing={(text) => this.setState({email: text})}
+              placeholder='Email'
               style={{ marginBottom: 20 }}
             />
             <TextBox
@@ -34,7 +48,7 @@ export class LogInScreen extends React.Component {
             text='Submit'
             backgroundColor='#ff2400'
             textColor='white'
-            onPress={() => console.log(this.state)}
+            onPress={this.submit}
           />
         </View>
       </SafeAreaView>
@@ -61,5 +75,9 @@ const styles = StyleSheet.create({
   label: {
     textAlign: 'center',
     marginBottom: 20,
+  },
+  errorMessage: {
+    textAlign: 'center',
+    color: 'red'
   }
 });
