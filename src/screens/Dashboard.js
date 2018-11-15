@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { MapView } from 'expo';
 import { Title } from '../components/Title';
+import { DrawerButton } from '../components/DrawerButton';
 
 export class DashboardScreen extends React.PureComponent {
 
@@ -12,7 +13,8 @@ export class DashboardScreen extends React.PureComponent {
     return (
       <View style={{flex: 1}}>
         <SafeAreaView style={styles.topContent}>
-          <Title style={styles.title}>Dashboard</Title>
+          <DrawerButton />
+          <Title style={commonStyles.title}>Dashboard</Title>
         </SafeAreaView>
         <MapView
           style={styles.map}
