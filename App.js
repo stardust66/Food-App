@@ -12,10 +12,12 @@ import { PickupSelectionScreen } from './src/screens/PickupSelection';
 import { PickupSelectionforOrgScreen } from './src/screens/PickupSelectionforOrg';
 import { DashboardScreen } from './src/screens/Dashboard';
 import { SplashScreen } from './src/screens/Splash';
+import { SettingsScreen } from './src/screens/Settings';
 import firebase from './src/services/firebase';
 
 const AppStack = createDrawerNavigator({
-  Dashboard: DashboardScreen
+  Dashboard: DashboardScreen,
+  Settings: SettingsScreen
 }, {
   initialRouteName: 'Dashboard'
 });
