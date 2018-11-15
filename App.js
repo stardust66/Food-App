@@ -1,5 +1,8 @@
 import React from 'react';
-import { createDrawerNavigator } from 'react-navigation';
+import {
+  createDrawerNavigator, createStackNavigator, createSwitchNavigator,
+  StackActions, NavigationActions
+} from 'react-navigation';
 import { WelcomeScreen } from './src/screens/Welcome';
 import { LogInScreen } from './src/screens/LogIn';
 import { SignUpScreen } from './src/screens/SignUp';
@@ -8,20 +11,16 @@ import { FoodPickupScreen } from './src/screens/FoodPickup';
 import { PickupSelectionScreen } from './src/screens/PickupSelection';
 import { PickupSelectionforOrgScreen } from './src/screens/PickupSelectionforOrg';
 import { DashboardScreen } from './src/screens/Dashboard';
+import { SplashScreen } from './src/screens/Splash';
+import firebase from './src/services/firebase';
 
-const RootStack = createDrawerNavigator({
-  PickupSeclectionforOrg: {
-    screen: PickupSelectionforOrgScreen
-  },
-  PickupSelection: {
-    screen: PickupSelectionScreen
-  },
-  FoodPickup: {
-    screen: FoodPickupScreen
-  },
-  DonateFood: {
-    screen: DonateFoodScreen
-  },
+const AppStack = createDrawerNavigator({
+  Dashboard: DashboardScreen
+}, {
+  initialRouteName: 'Dashboard'
+});
+
+const AuthStack = createStackNavigator({
   Welcome: {
     screen: WelcomeScreen
   },
@@ -30,16 +29,17 @@ const RootStack = createDrawerNavigator({
   },
   SignUp: {
     screen: SignUpScreen
-  },
-  Dashboard: {
-    screen: DashboardScreen
   }
-}, {
-  initialRouteName: 'Welcome'
-});
+})
 
-export default class App extends React.Component {
-  render() {
-    return <RootStack />
-  }
-}
+const Switcher = createSwitchNavigator({
+  Splash: SplashScreen,
+  App: AppStack,
+  Auth: AuthStack
+}, {
+  initialRouteName: 'Splash'
+})
+
+export default App = (props) => (
+  <Switcher />
+);
